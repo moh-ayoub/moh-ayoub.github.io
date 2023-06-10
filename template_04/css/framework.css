@@ -642,7 +642,7 @@ textarea:focus::placeholder {
     transition:var(--main-transition);
 }
 .blue-butt:hover {
-    background-color: var(--alt-blue-color);
+    background-color: var(--alt-blue);
 }
 /*start sidebar*/
 .sidebar {
