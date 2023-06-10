@@ -630,7 +630,7 @@
 .projects .images {
     border-bottom: 1px solid var(--sec-grey);
 }
-.projects img {
+.projects .content-boxes img {
     border: 2px solid white;
 }
 .projects img:hover {
