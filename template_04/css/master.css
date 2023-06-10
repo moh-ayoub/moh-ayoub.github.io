@@ -18,9 +18,11 @@
 .dashboard .content-boxes .box:first-child .heading {
     padding: 20px 20px 10px 20px;
 }
-.dashboard .heading p {
-    position: absolute;
-    margin-top: -30px;
+@media (min-width : 767px) {
+    .dashboard .heading p {
+        position: absolute;
+        margin-top: -30px;
+    }
 }
 .dashboard .content-boxes .box:first-child > img {
     top: 106px;
