@@ -1,0 +1,93 @@
+/*start global rules*/
+:root {
+    --transition: 0.3s;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Inter";
+    background-color: #0e153a;
+}
+/*end global rules*/
+
+/*start header*/
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: linear-gradient(180deg,#ffffff47, #ffffff1c, transparent);
+    padding: 0px 50px;
+    height: 120px;
+}
+header a {
+    text-decoration: none;
+    display: flex;
+    font-size: 12px;
+}
+header h1 {
+    text-transform: uppercase;
+    color: black;
+    font-weight: 900;
+    margin-right: 6px;
+}
+header h1:last-of-type {
+    color: white;
+}
+/*end header*/
+
+/*start content*/
+.content {
+    position: relative;
+    top: 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.content i {
+    color: #ddd;
+    font-size: 40px;
+    position: absolute;
+    top: -150px;
+}
+.content h1 {
+    color: #ddd;
+    text-transform: uppercase;
+    font-size: 25px;
+    position: absolute;
+    top: -75px;
+    text-align: center;
+}
+.content a {
+    text-decoration: none;
+    color: #ddd;
+    position: absolute;
+    top:230px;
+    text-transform: capitalize;
+    animation-name: link;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.content a:hover {
+    color:#61719f ;
+    transition: var(--transition);
+    animation-play-state: paused;
+} 
+@keyframes link {
+    50% {
+        font-size: 18px;
+    }
+    100% {
+        font-size: 16px;
+    }
+}
+/*end content*/

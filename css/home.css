@@ -1,0 +1,338 @@
+/*start global rules*/
+:root {
+    --transition: 0.3s;
+    --main-color:#457A92;
+    --list-color:#b9b9b9;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Inter";
+    background-color: #0e153a;
+}
+/*end global rules*/
+
+/*start header*/
+header {
+    background-color: var(--main-color);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 0px 20px;
+    align-items: center;
+}
+header .menu {
+    cursor: pointer;
+}
+header .menu span {
+    background-color: #ffffff;
+    width: 30px;
+    height: 4px;
+    display: block;
+    margin: 4px 0px;
+}
+header .menu span:nth-child(2) {
+    width: 15px;
+    transition: var(--transition);
+}
+header .menu:hover span:nth-child(2) {
+    width: 30px;
+}
+header .logo {
+    text-decoration: none;
+    display: flex;
+    font-size: 12px;
+}
+header .logo  h1 {
+    text-transform: uppercase;
+    color: black;
+    font-weight: 900;
+    margin-right: 6px;
+}
+header .logo h1:last-of-type {
+    color: white;
+}
+header .profile {
+    color: #ffffff;
+    font-size: 30px;
+}
+header .list ul {
+    position: absolute;
+    background-color: var(--main-color);
+    list-style: none;
+    color: #ffffff;
+    top: 60px;
+    left: 0;
+    transition: var(--transition);    
+    height: 70%;
+    padding-left: 50px;
+    width: 250px;
+    padding-top: 20px;
+    opacity: 0;
+    z-index: 5;
+}
+@media (max-width: 767px) {
+    header .list ul {
+        width: 100%;
+    }
+}
+header .menu:hover + ul {
+    opacity: 1;
+}
+header ul li {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: 0.05s;
+    text-transform: capitalize;
+}
+header ul li:not(:first-of-type):hover {
+    font-size: 18px;
+}
+header ul li:first-of-type {
+    margin-left: -43px;
+}
+header ul li:first-of-type i {
+    position: absolute;
+    left: 11px;
+    top: 13px;
+}
+header ul li:not(:first-of-type) i {
+    position: absolute;
+    left: -33px;
+    top: 3px;
+}
+header ul input[type="search"] {
+    outline: none;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    caret-color: #ffffff;
+    border-radius: 20px;
+    padding: 10px 0 10px 40px;
+    display: block;
+    width: 235px;
+    color: #ffffff;
+}
+header ul input[type="search"]::placeholder {
+    color: #ffffff;
+    transition: var(--transition);
+}
+header ul input[type="search"]:focus::placeholder {
+    opacity: 0;
+}
+header ul li:last-of-type {
+    margin-top: 180px;
+    font-size: 18px;
+    transition: var(--transition);
+}
+header ul li:last-of-type:hover,
+header ul li:last-of-type:hover a {
+    color: red;
+}
+header .list a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: var(--transition);
+}
+.overlay {
+    position: absolute;
+    width: 100vw;
+    height: 1350px;
+    background-color: black;
+    opacity: 0;
+    left: -18px;
+    top: 61px;
+    z-index: 4;
+    transition: var(--transition);
+    z-index: -1;
+}
+@media (max-width:1080px) {
+    .overlay {
+        height: 1600px;
+    }
+}
+@media (max-width:810px) {
+    .overlay {
+        height: 3000px;
+    }
+}
+.menu:hover + ul + .overlay {
+    opacity: 0.4;
+    z-index: 4;
+}
+/*end header*/
+
+/*start heading*/
+.heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.heading h1 {
+    color: white;
+    font-size: 30px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+.heading p {
+    color: var(--list-color);
+    margin-bottom: 50px;
+}
+@media (max-width: 767px) {
+    .heading h1 {
+        font-size: 20px;
+        margin-top: 60px;
+        margin-bottom: 15px;
+    }
+    .heading p {
+        font-size: 12px;
+    }
+}
+.heading .search {
+    position: relative;
+    margin-left: 40px;
+}
+@media (max-width: 767px) {
+    .heading .search {
+        display: none;
+    }
+}
+.heading .search input {
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    padding: 10px 10px 10px 40px;
+    border-radius: 40px;
+    z-index: 2;
+    position: relative;
+    color: white;
+    font-size: 14px;
+    display: block;
+    width: 300px;
+}
+.heading .search input::placeholder {
+    color: #ffffff;
+}
+.heading .search i {
+    position: absolute;
+    color: white;
+    left: 11px;
+    top: 11px;
+}
+
+
+/*end heading*/
+
+/*start content*/
+.content {
+    margin-top: 50px;
+    margin-bottom: 50px
+}
+.content .container {
+    padding: 0px 150px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 50px;
+    justify-content: center;
+}
+.content .box {
+    background-color: var(--main-color);
+    border-radius: 20px;
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+}
+
+.content .text {
+    color: white;
+    text-transform: capitalize;
+    font-size: 18px;
+    position: absolute;
+    top: 12%;
+    left: 8%;
+
+}
+.content .text p:last-of-type {
+    font-weight: bold;
+    margin-top: 4px;
+}
+.content .box i {
+    color: white;
+    position: absolute;
+    top: 80%;
+    right: 20px;
+    font-size: 20px;
+}
+.content .box:hover > i {
+    animation-name: arrow;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@keyframes arrow {
+    0% {
+        right: 20px;
+    }
+    50% {
+        right: 10px;
+    }
+    100% {
+        right: 20px;
+    }
+}
+.content img {
+    width: 80px;
+    position: absolute;
+    transform: rotate(30deg);
+}
+.content .box:first-of-type img {
+    top: 73%;
+    left: -5%;
+}
+.content .box:nth-of-type(2) img {
+    top: 75%;
+    left: -16px;
+}
+.content .box:nth-of-type(3) img {
+    top: 73%;
+    left: -31px;
+}
+.content .box:nth-of-type(4) img {
+    top: 77%;
+    left: -7%;
+}
+.content .box:nth-of-type(5) img {
+    top: 74%;
+    left: -7%;
+}
+.content .box:nth-of-type(6) img {
+    top: 72%;
+    left: -5%;
+}
+.content .box:nth-of-type(7) img {
+    top: 69%;
+    left: -5%;
+}
+.content .box:nth-of-type(8) img {
+    top: 70%;
+    left: -3%;
+}
+.content .box:nth-of-type(9)  img{
+    top: 78%;
+    left: -4%;
+}
+.content .box:last-of-type img {
+    filter: brightness(0.4);
+    top: 81%;
+    left: -2%;
+}
+/*end content*/
