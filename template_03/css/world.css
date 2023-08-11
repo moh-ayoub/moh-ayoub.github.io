@@ -200,6 +200,28 @@ ul {
     z-index: 1;
 }
 /*end spike seperator*/
+/*start go up button*/
+.up-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 35px;
+    width: 35px;
+    position: fixed;
+    top: 93vh;
+    font-size: 25px;
+    right: 10px;
+    background-color: #2196f3;
+    color: white;
+    transition: 0.3s;
+    opacity: 0;
+    z-index: -1000;
+}
+.up-button:hover {
+    background-color: #1b81d4;
+}
 /*end components*/
 
 /*start header*/
@@ -230,6 +252,7 @@ header .container > ul > li {
     position: relative;
     overflow: hidden;
     transition: 0.4s;
+    cursor: pointer;
 
 }
 header .container > ul > li a::before {
@@ -243,13 +266,16 @@ header .container > ul > li a::before {
     transition: 0.4s;
 
 }
-header .container > ul > li:hover a::before {
+header .container > ul > li:hover a::before,
+header .container ul .active a::before {
     left: 0;
 }
-header .container > ul > li:hover {
+header .container > ul > li:hover ,
+header .container ul .active {
     background-color: #cacaca21;
 } 
-header .container > ul li:hover a {
+header .container > ul li:hover a ,
+header .container ul .active a{
     color: var(--main-color-alt);
 }
 header .container > ul li a {
@@ -282,29 +308,24 @@ header .logo a {
         height: 4px;
     }
 }
-header .active + div {
-    z-index: -1;
+header .menu-container + div {
     display: flex;
     width: 1190px;
     position: absolute;
-    top: 93px;
+    top: 400px;
     background-color: white;
     left: 50%;
     transform: translateX(-50%);
     justify-content: space-between;
     padding: 40px;
     border-bottom: 3px var(--main-color-alt) solid;
+    z-index: -1000;
     opacity: 0;
-}
-header .active:hover + div {
     transition: 0.5s;
-    opacity: 1;
-    z-index: 1000;
-    top: 73px;
 }
 
 @media (max-width: 1200px) {
-    header .active + div {
+    header .menu-container + div {
         width: 950px;
     }
     header .menu img {
@@ -314,7 +335,7 @@ header .active:hover + div {
     }
 }
 @media (max-width: 992px) {
-    header .active + div {
+    header .menu-container + div {
         width: 750px;
     }
     header .menu img {
@@ -325,7 +346,7 @@ header .active:hover + div {
     }
 }
 @media (max-width: 767px) {
-    header .active + div {
+    header .menu-container + div {
         width: 100%;
     }
     header .menu img {
@@ -404,6 +425,9 @@ header .menu .col {
     grid-template-columns: 1fr 1fr;
     position: relative;
     height: 100%;
+}
+.landing .image {
+    display: block;
 }
 @media (max-width: 992px) {
     .landing .container {
@@ -1124,7 +1148,6 @@ header .menu .col {
 .skills .form span {
     background-color: #eee;
     position: relative;
-    width: 100%;
     height: 30px;
     display: block;
 }
@@ -1134,20 +1157,22 @@ header .menu .col {
     height: 100%;
     position: absolute;
     width: 0;
-    transition: 0.6s;
+    transition: 0.8s;
 }
-.skills .form span::before {
+.skills .form .col:first-of-type span.show-skill::before {
     width: 80%;
 }
-.skills .form .col:nth-child(2) span::before {
+.skills .form .col:nth-child(2) span.show-skill::before {
     width: 85%;
 }
-.skills .form .col:nth-child(3) span::before {
+.skills .form .col:nth-child(3) span.show-skill::before {
     width: 70%;
+}
+.skills .form .col:last-of-type span.show-skill::before {
+    width: 60%;
 }
 .skills .form span::after {
     right: 0;
-    content: "80%";
     position: absolute;
     top: -40px;
     font-size: 12px;
@@ -1158,11 +1183,17 @@ header .menu .col {
     padding: 4px;
     color: var(--second-color);
 }
+.skills .form .col:first-of-type span::after {
+    content: "80%";
+}
 .skills .form .col:nth-child(2) span::after {
     content: "85%";
 }
 .skills .form .col:nth-child(3) span::after {
     content: "70%";
+}
+.skills .form .col:last-of-type span::after {
+    content: "60%";
 }
 /*end skills*/
 
@@ -1321,8 +1352,14 @@ header .menu .col {
     color: var(--second-color);
     border-radius: 5px;
     margin-right: 10px;
-    padding: 0px 18px 55px 18px;
     position: relative;
+    display: flex;
+    height: 57px;
+    width: 70px;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0px 16px 0px;
+    font-weight: bold;
     transition: 0.3s;
 }
 .events .form .col .time div:hover {
@@ -1335,7 +1372,7 @@ header .menu .col {
     width: 100%;
     background-color: #d5d5d5;
     left: 0;
-    top: 80%;
+    top: 68%;
     transition: 0.3s;
 }
 .events .form .col .time div:hover::before {
@@ -1348,7 +1385,8 @@ header .menu .col {
     font-size: 13px;
     left: 50%;
     transform: translateX(-50%);
-    top: 83%;
+    top: 71%;
+    font-weight: 600;
 }
 .events .form .col .time div:first-child:after {
     content: "Days";
@@ -1803,7 +1841,7 @@ header .menu .col {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #eeeeee2b;
+    background-color: #c9c7c72b;
     z-index: 5;
     transition: 0.3s;
 }
@@ -1817,6 +1855,7 @@ header .menu .col {
 .stats .box h1 {
     font-size: 50px;
     margin-top: 10px;
+    transition: 0.3s ;
 }
 .stats .box h4 {
     color: var(--main-color-alt);

@@ -31,7 +31,7 @@
                 <li>
                     <a href="#features">Features</a>
                 </li>
-                <li class="active">
+                <li class="menu-container">
                     <a href="">Other Links</a>
                 </li>
                 <div class="menu">
@@ -52,11 +52,11 @@
                             </li>
                             <li>
                                 <i class="far fa-check-circle fa-fw"></i>
-                                <a href="#our-skills">Our Skills</a>
+                                <a href="#skills">Our Skills</a>
                             </li>
                             <li>
                                 <i class="far fa-clipboard fa-fw"></i>
-                                <a href="#how-it-works">How It Works</a>
+                                <a href="#works">How It Works</a>
                             </li>
                         </ul>
                     </div>
@@ -80,7 +80,7 @@
                             </li>
                             <li>
                                 <i class="fas fa-percent fa-fw"></i>
-                                <a href="#request">Request A Design</a>
+                                <a href="#discount">Request A Design</a>
                             </li>
                         </ul>
                     </div>
@@ -382,7 +382,7 @@
     <!--end testimonials-->
 
     <!--start team-->
-    <div class="team">
+    <div class="team" id="team-members">
         <div class="special-heading">
             <p>team members</p>
         </div>
@@ -571,7 +571,7 @@
     <!--end services-->
 
     <!--start skills-->
-    <div class="skills">
+    <div class="skills" id="skills">
         <div class="special-heading">
             <p>Our Skills</p>
         </div>
@@ -602,7 +602,7 @@
     <!--end skills-->
 
     <!--start works-->
-    <div class="works">
+    <div class="works" id="works">
         <div class="special-heading">
             <p>how it works ?</p>
         </div>
@@ -636,7 +636,7 @@
     <!--end works-->
 
     <!--start events-->
-    <div class="events">
+    <div class="events" id="events">
         <div class="special-heading">
             <p>latest events</p>
         </div>
@@ -645,10 +645,10 @@
                 <img src="images/events.png" alt="image">
                 <div class="col">
                     <div class="time">
-                        <div><h1>15</h1></div>
-                        <div><h1>08</h1></div>
-                        <div><h1>45</h1></div>
-                        <div><h1>55</h1></div>
+                        <div class="event-days"></div>
+                        <div class="event-hours"></div>
+                        <div class="event-minutes"></div>
+                        <div class="event-seconds"></div>
                     </div>
                     <div class="text">
                         <h1>tech masters event 2021</h1>
@@ -665,7 +665,7 @@
     <!--end events-->
 
     <!--start pricing-->
-    <div class="pricing">
+    <div class="pricing" id="pricing">
         <div class="special-heading">
             <p>pricing plans</p>
         </div>
@@ -718,7 +718,7 @@
     <!--end pricing-->
 
     <!--start videos-->
-    <div class="videos">
+    <div class="videos" id="videos">
         <div class="special-heading">
             <p>top videos</p>
         </div>
@@ -742,32 +742,34 @@
     <!--end videos-->
 
     <!--start stats-->
-    <div class="stats">
-        <p>Our Awesome Stats</p>
+    <div class="stats" id="stats">
+        <div class="special-heading">
+            <p>Stats</p>
+        </div>
         <div class="overlay"></div>
         <div class="container">
             <div class="box">
                 <div></div>
                 <i class="far fa-user"></i>
-                <h1>150</h1>
-                <h4><i>Clients</i></h4>
+                <h1 data-goal= "150"></h1>
+                <h4><i>Clients</i>0</h4>
             </div>
             <div class="box">
                 <div></div>
                 <i class="fas fa-code"></i>
-                <h1>135</h1>
-                <h4><i>Projects</i></h4>
+                <h1 data-goal= "135"></h1>
+                <h4><i>Projects</i>0</h4>
             </div>
             <div class="box">
                 <div></div>
                 <i class="fas fa-globe-asia"></i>
-                <h1>50</h1>
-                <h4><i>Countries</i></h4>
+                <h1 data-goal= "50"></h1>
+                <h4><i>Countries</i>0</h4>
             </div>
             <div class="box">
                 <div></div>
                 <i class="far fa-money-bill-alt"></i>
-                <h1>500</h1>
+                <h1 data-goal= "500">0</h1>
                 <h4><i>Money</i></h4>
             </div>
         </div>
@@ -775,7 +777,7 @@
     <!--end stats-->
 
     <!--start discount-->
-    <div class="discount">
+    <div class="discount" id="discount">
         <div class="box">
             <div class="overlay"></div>
             <h1>We Have A Discount</h1>
@@ -828,8 +830,10 @@
                 <img src="images/gallery-06.png" alt="image">
             </div>
         </div>
-        <p>Made With <3 By Ayoub</p>
+        <p>Made With <3 By Ayoub </p>
     </footer>
     <!--end footer-->
+    <i class="fas fa-chevron-up up-button"></i>
+    <script src="/world.js"></script>
 </body>
 </html>
