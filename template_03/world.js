@@ -61,7 +61,7 @@ function showTime() {
 // show skill with souplesness
 function showSkills() {
   let skills = document.querySelectorAll(".skills span");
-  let section = document.querySelector(".skills").offsetTop;
+  let section = document.querySelector(".skills").offsetTop + 150;
   console.log(section);
   window.addEventListener("scroll", function (e) {
     if (this.scrollY >= section) {
@@ -73,29 +73,32 @@ function showSkills() {
 }
 //show statistics smoothly
 function showStats() {
-  let stats = document.querySelectorAll(".stats h1");
-  let section = document.querySelector(".stats").offsetTop;
-  let started = false;
-  window.addEventListener("scroll", function () {
-    if (started === false && window.scrollY >= section) {
-      started = true;
-      stats.forEach((stat) => {
-        startCount(stat);
-      });
-    } else if (started === true && this.scrollY < section) {
-      started = false;
-      stats.forEach((stat) => (stat.innerHTML = 0));
-    }
-  });
-  function startCount(el) {
+  function counter(el) {
     let goal = el.dataset.goal;
     let count = setInterval(() => {
       el.innerHTML++;
-      if (el.innerHTML == goal) {
+      if (el.innerHTML == goal || window.scrollY < section) {
         clearInterval(count);
       }
     }, 3500 / goal);
   }
+  let stats = document.querySelectorAll(".stats h1");
+  let section = Number(document.querySelector(".stats").offsetTop - 450);
+  let started = 0;
+  window.addEventListener("scroll", function () {
+    if (started == 0) {
+      if (window.scrollY >= section) {
+        stats.forEach((stat) => {
+          counter(stat);
+        });
+      }
+      started = 1;
+    }
+    if (window.scrollY < section) {
+      started = 0;
+      stats.forEach((stat) => (stat.innerHTML = 0));
+    }
+  });
 }
 
 showMenu();

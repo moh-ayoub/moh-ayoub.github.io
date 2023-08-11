@@ -1157,7 +1157,7 @@ header .menu .col {
     height: 100%;
     position: absolute;
     width: 0;
-    transition: 0.8s;
+    transition: 3.8s;
 }
 .skills .form .col:first-of-type span.show-skill::before {
     width: 80%;
