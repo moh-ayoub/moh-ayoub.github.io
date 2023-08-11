@@ -58,10 +58,10 @@ function showTime() {
     seconds.innerHTML = Math.floor((difference % (1000 * 60)) / 1000);
   }, 1000);
 }
-// show skill with soupless
+// show skill with souplesness
 function showSkills() {
   let skills = document.querySelectorAll(".skills span");
-  let section = document.querySelector(".skills").offsetTop - 400;
+  let section = document.querySelector(".skills").offsetTop - 300;
   console.log(section);
   window.addEventListener("scroll", function (e) {
     if (this.scrollY >= section) {
