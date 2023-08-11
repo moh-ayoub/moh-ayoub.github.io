@@ -61,7 +61,7 @@ function showTime() {
 // show skill with souplesness
 function showSkills() {
   let skills = document.querySelectorAll(".skills span");
-  let section = document.querySelector(".skills").offsetTop - 300;
+  let section = document.querySelector(".skills").offsetTop;
   console.log(section);
   window.addEventListener("scroll", function (e) {
     if (this.scrollY >= section) {
@@ -74,7 +74,7 @@ function showSkills() {
 //show statistics smoothly
 function showStats() {
   let stats = document.querySelectorAll(".stats h1");
-  let section = Number(document.querySelector(".stats").offsetTop - 450);
+  let section = document.querySelector(".stats").offsetTop;
   let started = false;
   window.addEventListener("scroll", function () {
     if (started === false && window.scrollY >= section) {
