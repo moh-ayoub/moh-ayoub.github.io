@@ -181,6 +181,7 @@ function genWords() {
             localStorage.bestScoreHard = totalScore.innerHTML;
           }
           // show the best score
+          bestScoreValue.innerHTML = totalScore.innerHTML;
           bestScore.style.opacity = "1";
         }
       }
