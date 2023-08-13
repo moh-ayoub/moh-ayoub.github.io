@@ -170,3 +170,20 @@ button.start:hover {
     font-size: 46px;
     color: var(--main-color);
 }
+button.replay {
+    border: none;
+    background-color: #47ce7c;
+    padding: 15px;
+    font-size: 20px;
+    display: none;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+
+}
+button.replay:hover {
+    background-color: #3abd6f;
+}

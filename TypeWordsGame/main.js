@@ -19,6 +19,12 @@ let levelStatus = document.querySelector(".level-status");
 let speedStatus = document.querySelector(".speed-status");
 let gameStats = document.querySelector(".game-stats");
 let bestScoreValue = document.querySelector(".best");
+let replayButton = document.querySelector(".replay");
+
+// restart the game when clicking on the replay button
+replayButton.onclick = function () {
+  location.reload();
+};
 
 // set the best score value from the local storage
 bestScoreValue.innerHTML = localStorage.bestScoreMedium;
@@ -168,6 +174,7 @@ function genWords() {
 
         if (currentScore.innerHTML == totalScore.innerHTML) {
           clearInterval(counter);
+          replayButton.style.display = "block";
           nextWord.innerHTML = "You're Fast !";
           writtenWord.value = "Congrat'z";
           writtenWord.disabled = true;
@@ -182,7 +189,7 @@ function genWords() {
           }
           // show the best score
           bestScoreValue.innerHTML = totalScore.innerHTML;
-          bestScore.style.opacity = "1";
+          bestScore.style.cssText = "opacity : 1; left : 10px";
         }
       }
     };
@@ -191,6 +198,7 @@ function genWords() {
       writtenWord.disabled = true;
       writtenWord.value = "Game Over";
       clearInterval(counter);
+      replayButton.style.display = "block";
       nextWord.innerHTML = `Score ${currentScore.innerHTML}/${totalScore.innerHTML}`;
       writtenWord.style.cssText = "color : red; font-weight : bold";
 
