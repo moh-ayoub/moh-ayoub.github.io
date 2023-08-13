@@ -1,0 +1,172 @@
+:root {
+    --main-color : #0fa9ef;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: #eee;
+}
+.game {
+    margin: 0px auto;
+    text-align: center;
+    background-color: #eee;
+    width: 60%;
+}
+.game-name {
+    background-color: var(--main-color);
+    color: white;
+    padding: 20px 0px;
+    font-size: 24px;
+    font-weight: bold;
+    width: 100vw;
+    right: 33.3%;
+    position: relative;
+}
+.difficulty {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    left: 10px;
+    top: 78px;
+    width: 12%;
+    align-items: flex-start;
+    padding: 20px 0px 20px 40px;
+    gap: 40px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.difficulty input {
+    display: none;
+}
+.difficulty label {
+    cursor: pointer;
+    margin-left: 10px;
+    margin-top: 2px;
+}
+.difficulty label::before {
+    content: "";
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    left: 15px;
+    border: 2px solid #eee;
+    cursor: pointer;
+    margin-top: -2px;
+}
+.difficulty label::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    background-color: var(--main-color);
+    left: 16px;
+    margin-top: -21px;
+    transform:  scale(0);
+    transition: 0.3s;
+}
+.difficulty input:checked + label::after {
+    transform: scale(1) rotate(360deg);
+}
+.game-status {
+    background-color: white;
+    color: black;
+    padding: 15px;
+    font-size: 16px;
+    margin: 10px auto;
+}
+.game-status span {
+    color: var(--main-color);
+    font-weight: bold;
+}
+button.start {
+    background-color: #47ce7c;
+    border: none;
+    color: white;
+    font-weight: bold;
+    margin: 10px auto;
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+    display: block;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button.start:hover {
+    background-color: #3abd6f;
+
+}
+.next-word {
+    padding: 10px;
+    margin-bottom: 10px;
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 40px;
+    display: none;
+    user-select: none;
+}
+.written-word {
+    width: calc(100% - 4px);
+    height: 40px;
+    caret-color: var(--main-color);
+    text-align: center;
+    border: 2px solid var(--main-color);
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+.written-word:focus {
+    outline: none;
+}
+.words-list {
+    background-color: white;
+    color: black;
+    padding: 15px;
+    font-size: 16px;    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+.words-list div {
+    background-color: var(--main-color);
+    color: white;
+    padding: 4px 6px;
+    border-radius: 6px;
+}
+.game-stats {
+    background-color: white;
+    color: black;
+    margin: 10px 0px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+}
+.best-score {
+    position: absolute;
+    top: 77px;
+    padding: 20px;
+    background-color: white;
+    width: 12%;
+    text-wrap: nowrap;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    right: 10px;
+    height: 140px;
+    transition: 0.3s;
+}
+.best {
+    margin-top: 33px;
+    font-size: 46px;
+    color: var(--main-color);
+}

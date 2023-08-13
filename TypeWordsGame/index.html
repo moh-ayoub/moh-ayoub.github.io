@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Type Words Game</title>
+    <link rel="stylesheet" href="/master.css">
+  </head>
+  <body>
+    <div class="game">
+      <div class="game-name">Type Words Game</div>
+
+      <form action="" class="difficulty">
+        <div>
+          <input type="radio" id="easy" name="difficulty" class="level" data-difficulty = "Easy" data-speed = "05">
+          <label for="easy">Easy</label>
+        </div>
+        <div>
+          <input type="radio" id="medium" name="difficulty" checked class="level" data-difficulty = "Medium" data-speed = "03">
+          <label for="medium">Medium</label>
+        </div>
+        <div>
+          <input type="radio" id="hard" name="difficulty" class="level" data-difficulty = "Hard" data-speed = "03">
+          <label for="hard">Hard</label>
+        </div>
+      </form>
+
+      <div class="game-status">
+        You're Playing The <span class="level-status">Medium</span> Level & You Have <span class="speed-status">03</span> Seconds To Type The Word
+      </div>
+      <button class="start">Start</button>
+      <div class="next-word"></div>
+      <input type="text" class="written-word">
+
+      <div class="words-list">Words Will Appear Here</div>
+      <div class="game-stats">
+        <div >
+          Time Left <span class="time-left">??</span> Seconds
+        </div>
+        <div class="score">
+          Score <span class="current-score">0</span> From <span class="total-score">??</span>
+        </div>
+      </div>
+      <div class="best-score">
+        <div>Best Score :</div>
+        <div class="best">932</div>
+      </div>
+      <div class="Instructions"></div>
+    </div>
+    <script src="/main.js"></script>
+  </body>
+</html>
