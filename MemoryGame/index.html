@@ -1,0 +1,119 @@
+<!DOCType html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="/master.css">
+  </head>
+  <body>
+    <div class="start-screen">
+      <button>Start</button>
+    </div>
+    <div class="game">
+      <div class="info">
+        <div class="greeting">Hello <span class="name"></span></div>
+        <div class="scoring">Score : <span class="score"></span></div>
+      </div>
+      <div class="cards">
+        <div class="card" data-kind = "php">
+          <img src="images/php-151199_1280.png" alt="image">
+        </div>
+        <div class="card" data-kind = "php">
+          <img src="images/php-151199_1280.png" alt="image">
+        </div>
+        <div class="card " data-kind = "c">
+          <img src="images/c-2189150_1280.png" alt="image">
+        </div>
+        <div class="card" data-kind = "c">
+          <img src="images/c-2189150_1280.png" alt="image">
+        </div>
+        <div class="card" data-kind = "coding">
+          <img src="images/coding-7224945_1280.png" alt="image">
+        </div>
+        <div class="card" data-kind = "coding">
+          <img src="images/coding-7224945_1280.png" alt="image">
+        </div>
+        <div class="card" data-kind = "css">
+          <img src="images/css.png" alt="image">
+        </div>
+        <div class="card" data-kind = "css">
+          <img src="images/css.png" alt="image">
+        </div>
+        <div class="card" data-kind = "git">
+          <img src="images/git.png" alt="image">
+        </div>
+        <div class="card" data-kind = "git">
+          <img src="images/git.png" alt="image">
+        </div>
+        <div class="card" data-kind = "html">
+          <img src="/images/html.png" alt="image">
+        </div>
+        <div class="card" data-kind = "html">
+          <img src="/images/html.png" alt="image">
+        </div>
+        <div class="card" data-kind = "messenger">
+          <img src="/images/messenger-1495274_1280.png" alt="image">
+        </div>
+        <div class="card" data-kind = "messenger">
+          <img src="/images/messenger-1495274_1280.png" alt="image">
+        </div>
+        <div class="card" data-kind = "apple">
+          <img src="images/apple-1475977_1280.png" alt="image">
+        </div>
+        <div class="card" data-kind = "apple">
+          <img src="images/apple-1475977_1280.png" alt="image">
+        </div>
+        <div class="card" data-kind = "banana">
+          <img src="images/banana-2850841_1280.png" alt="image">
+        </div>
+        <div class="card" data-kind = "banana">
+          <img src="images/banana-2850841_1280.png" alt="image">
+        </div>
+        <div class="card" data-kind = "cat">
+          <img src="images/cat-3237903_1280.png" alt="image">
+        </div>
+        <div class="card" data-kind = "cat">
+          <img src="images/cat-3237903_1280.png" alt="image">
+        </div>
+        <div class="card" data-kind = "dog">
+          <img src="images/dog-5276317_1280.png" alt="image">
+        </div>
+        <div class="card" data-kind = "dog">
+          <img src="images/dog-5276317_1280.png" alt="image">
+        </div>
+        <div class="card" data-kind = "hot-dog">
+          <img src="images/hot-dog-3282881_1280.png" alt="image">
+        </div>
+        <div class="card" data-kind = "hot-dog">
+          <img src="images/hot-dog-3282881_1280.png" alt="image">
+        </div>
+        <div class="card" data-kind = "car">
+          <img src="images/jeep-6029278_1280.png" alt="image">
+        </div>
+        <div class="card" data-kind = "car">
+          <img src="images/jeep-6029278_1280.png" alt="image">
+        </div>
+        <div class="card" data-kind = "time">
+          <img src="images/time-1891565_1280.png" alt="image">
+        </div>
+        <div class="card" data-kind = "time">
+          <img src="images/time-1891565_1280.png" alt="image">
+        </div>
+      </div>
+    </div>
+    <div class="replay-screen">
+      <div class="congrats">Got The Best Score !</div>
+      <div class="result">
+        <div>Best Score : <span class="best-score"></span></div>
+        <div>Your Score : <span class="result-score"></span></div>
+      </div>
+      <button class="replay">Replay</button>
+    </div>
+    <audio src="sounds/correct-choice-43861.mp3"id ="correct" preload="auto"></audio>
+    <audio src="sounds/mixkit-failure-arcade-alert-notification-240.wav" id="fail" preload="auto"></audio>
+    <audio src="sounds/game-bonus-144751.mp3" id="winning" preload="auto"></audio>
+    <script src="/main.js"></script>
+  </body>
+</html>
