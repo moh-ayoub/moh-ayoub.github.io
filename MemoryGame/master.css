@@ -16,6 +16,95 @@ body {
     position: relative;
     user-select: none;
 }
+/* customize the prompt message */
+.promptBox {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background: #6e6e6e7e;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    animation: promptBoxAnimation 0.2s;
+}
+
+@keyframes promptAnimation {
+    from {
+        opacity: 0;
+    }
+}
+
+.promptModal {
+    position: absolute;
+    background: dodgerblue;
+    max-width: 500px;
+    width: 90%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    animation: promptModalAnimation 0.2s;
+    top: 95px;
+}
+
+@keyframes promptModalAnimation {
+    from {
+        transform: scale(0.6);
+    }
+}
+
+.promptModal p {
+    color: white;
+    letter-spacing: 1px;
+    margin-left: 10px;
+}
+.promptForm {
+    padding: 15px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+.promptForm p {
+    color: rgb(71, 71, 71);
+    font-weight: 600;
+    margin-left: 0;
+    letter-spacing: initial;
+}
+#pop-name {
+    padding: 6px;
+    color: gray;
+    border: solid 1px gray;
+    border-radius: 5px;
+    outline: none;
+    font-size: 18px;
+}
+#pop-name:focus {
+    border-color: dodgerblue;
+    box-shadow: 0 0 5px rgba(30, 143, 255, 0.521);
+}
+.buttonBox {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;   
+}
+.buttonBox button {
+    margin-right: 10px;
+    padding: 8px 12px;
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#submitBtn {
+    background: rgb(19, 179, 19);
+    color: white;
+}
+
+
 .info {
     display: flex;
     justify-content: space-between;

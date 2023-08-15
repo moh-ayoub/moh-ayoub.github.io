@@ -8,14 +8,21 @@ if (localStorage.score) {
 let startScreen = document.querySelector(".start-screen");
 let startButton = document.querySelector(".start-screen button");
 let userName = document.querySelector(".greeting .name");
+let popUp = document.querySelector(".promptBox");
+let popUpButton = document.querySelector("#submitBtn");
+let NameInserted = document.querySelector("#pop-name");
 startButton.onclick = function () {
-  let user = prompt("Your Name");
+  popUp.style.display = "flex";
   startScreen.style.display = "none";
-  if (user == null || user == "") {
-    userName.innerHTML = "Unknown";
-  } else {
-    userName.innerHTML = user;
-  }
+  popUpButton.onclick = function () {
+    if (NameInserted.value == null || NameInserted.value == "") {
+      userName.innerHTML = "Unknown";
+    } else {
+      userName.innerHTML = NameInserted.value;
+    }
+    popUp.style.display = "none";
+    return false;
+  };
 };
 
 //shufflling cards
