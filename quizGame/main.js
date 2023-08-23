@@ -34,7 +34,7 @@ request.onreadystatechange = function () {
     UserData(questions);
   }
 };
-request.open("GET", "/questions.json");
+request.open("GET", "../quizGame/questions/questions.json");
 request.send();
 
 // the functions
