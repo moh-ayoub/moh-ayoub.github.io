@@ -192,7 +192,7 @@ body {
     transition: 0.3s;
 }
 .start-screen button:hover ,
-button.replay{
+button.replay:hover {
     background-color: #f4450e;
 }
 .replay-screen {

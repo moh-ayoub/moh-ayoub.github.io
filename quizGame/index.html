@@ -1,0 +1,70 @@
+<!DOCType html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Game</title>
+    <!--font awesome library-->
+    <link rel="stylesheet" href="/css/all.min.css">
+    <!-- the style sheet -->
+    <link rel="stylesheet" href="/css/master.css">
+  </head>
+  <body>
+    <!-- the start screen -->
+    <div class="start-screen">
+      <fieldset>
+        <legend>Choose a Topic: </legend>
+      </fieldset>
+      <input type="text" class="user-name" placeholder="You Are Called ?">
+      <button class="start">Start</button>
+    </div>
+    <!-- the main game container -->
+    <div class="container">
+      <div class="header">
+        <div class="category"></div>
+        <span></span>
+      </div>
+      <div class="question"></div>
+      <div class="answers">
+
+      </div>
+      <span></span>
+      <div class="stats">
+        <div class="process">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="time">10</div>
+      </div>
+    </div>
+    <!-- the end screen -->
+    <div class="end-screen">
+      <div class="scores">
+        <div class="your-score"></div>
+        <div class="best-score"></div>
+      </div>
+      <div class="message"></div>
+      <button class="restart">Replay</button>
+    </div>
+    <!-- adding audio -->
+    <div class="sounds">
+      <audio src="/audio/success-1-6297_6ox5AZJN.mp3" id="correct" preload="auto"></audio>
+      <audio src="/audio/negative-beeps-6008_KLEyUnkA.mp3" id="wrong" preload="auto"></audio>
+      <audio src="/audio/kl-peach-game-over-iii-142453.mp3" id="end-sound" preload="auto"></audio>
+      <audio src="/audio/clock ticking.mp3" id="ticking-sound" preload="auto"></audio>
+      <audio src="/audio/horn-stabs-entrance-14741.mp3" id="welcome-sound" preload="auto"></audio>
+    </div>
+    <script src="/main.js"></script>
+  </body>
+</html>
