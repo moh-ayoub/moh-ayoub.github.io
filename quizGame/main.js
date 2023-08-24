@@ -144,12 +144,13 @@ function setQuestions(questions, topic) {
     let randomNumber = Math.floor(Math.random() * initialQuestions.length);
     randomizedQuestions.push(initialQuestions[randomNumber]);
     initialQuestions.splice(randomNumber, 1);
+    randomizedQuestions.slice(0, 12);
   }
 }
 
 // display questions
 function displayQuestions(questions) {
-  if (k == randomizedQuestions.length) {
+  if (k == 12) {
     document.getElementById("end-sound").play();
 
     // adding score to locale storage
@@ -172,8 +173,8 @@ function displayQuestions(questions) {
     let messageContainer = document.querySelector(".message");
     let restartButton = document.querySelector(".restart");
 
-    scoreContainer.innerHTML = `You Got : ${playerScore}/${questions.length}`;
-    bestScoreContainer.innerHTML = `Best Score : ${localStorage.bestScore}/${questions.length}`;
+    scoreContainer.innerHTML = `You Got : ${playerScore}/12`;
+    bestScoreContainer.innerHTML = `Best Score : ${localStorage.bestScore}/12`;
     if (playerScore == localStorage.bestScore) {
       messageContainer.innerHTML = "You Got The Best Score !";
     } else {

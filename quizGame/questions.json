@@ -61,6 +61,116 @@
                 "title" : "What is the national sport of Japan ?",
                 "correct-answer" : "Sumo Wrestling",
                 "other-answers" : "Judo-Karate-Cricket"
+            }},
+            {"question" : {
+                "title" : "The Olympics are held every how many years ?",
+                "correct-answer" : "4 years.",
+                "other-answers" : "2 years-6 years-1 year"
+            }},
+            {"question" : {
+                "title" : "What sport is best known as the ‘king of sports’ ?",
+                "correct-answer" : "Soccer",
+                "other-answers" : "BasketBall-Tennis-Boxing"
+            }},
+            {"question" : {
+                "title" : "Which boxer fought against Muhammad Ali and won ?",
+                "correct-answer" : "Joe Frazier",
+                "other-answers" : "Larry Holmes-Evander Holyfield-George Foreman"
+            }},
+            {"question" : {
+                "title" : "In what game is “love” a score ?",
+                "correct-answer" : "Tennis",
+                "other-answers" : "Rugby-Hockey-Golf"
+            }},
+            {"question" : {
+                "title" : "How many players are on a baseball team ?",
+                "correct-answer" : "9",
+                "other-answers" : "8-10-6"
+            }},
+            {"question" : {
+                "title" : "Which country won the World Cup 2018 ?",
+                "correct-answer" : "France",
+                "other-answers" : "Italy-Spain-Netherland"
+            }},
+            {"question" : {
+                "title" : "How many teams are there in the UEFA Champions League ?",
+                "correct-answer" : "32",
+                "other-answers" : "28-46-24"
+            }},
+            {"question" : {
+                "title" : "How many weight classes are there in boxing ?",
+                "correct-answer" : "17",
+                "other-answers" : "18-19-21"
+            }},
+            {"question" : {
+                "title" : "In which City would you find Premier League club Aston Villa ?",
+                "correct-answer" : "Birmingham",
+                "other-answers" : "London-Manchester-Licester"
+            }},
+            {"question" : {
+                "title" : "What is the national sport of Thailand ?",
+                "correct-answer" : "Muay Thai",
+                "other-answers" : "Cricket-Baseball-Wrestling"
+            }},
+            {"question" : {
+                "title" : "In what year was the first World Cup ?",
+                "correct-answer" : "1930",
+                "other-answers" : "1932-1934-1928"
+            }},
+            {"question" : {
+                "title" : "What English Premier League club plays at a stadium known as the Theatre of Dreams ?",
+                "correct-answer" : "Manchester United",
+                "other-answers" : "Chelsea-Arsenal-Liverpool"
+            }},
+            {"question" : {
+                "title" : "How long is an Olympic swimming pool ?",
+                "correct-answer" : "50 metres",
+                "other-answers" : "60 metres-120 metres-20 metres"
+            }},
+            {"question" : {
+                "title" : "Which country is legendary tennis player Bjorn Borg from ?",
+                "correct-answer" : "Sweden",
+                "other-answers" : "Netherland-Belgium-Russia"
+            }},
+            {"question" : {
+                "title" : "Which Premier League football team are known as 'The Hammers' ? ",
+                "correct-answer" : "West Ham United",
+                "other-answers" : "Aston Villa-Chelsea-Manchester City"
+            }},
+            {"question" : {
+                "title" : "How many points does a free throw score in Basketball ?",
+                "correct-answer" : "1",
+                "other-answers" : "2-3-4"
+            }},
+            {"question" : {
+                "title" : "How many times have Brazil won the World Cup ?",
+                "correct-answer" : "5",
+                "other-answers" : "4-7-6"
+            }},
+            {"question" : {
+                "title" : "What is the national martial art of Korea ?",
+                "correct-answer" : "Taekwondo",
+                "other-answers" : "Sumo-Judo-Karate"
+            }},
+            {"question" : {
+                "title" : "In which year did Roger Federer win his first Wimbledon title ?",
+                "correct-answer" : "2003",
+                "other-answers" : "2001-1998-1997"
+            }},
+            {"question" : {
+                "title" : "David Beckham, played for which football club between 1993 and 2003 ?",
+                "correct-answer" : "Manchester United",
+                "other-answers" : "Real Madrid-Psg-Liverpool"
+            }},
+            {"question" : {
+                "title" : "How many coloured rings are on the Olympic flag ?",
+                "correct-answer" : "5",
+                "other-answers" : "4-6-3"
+            }},
+            {"question" : {
+                "title" : "Which English football team play their home games at Old Trafford ?",
+                "correct-answer" : "Manchester United",
+                "other-answers" : "Chelsea-Arsenal-Liverpool"
             }}
             ]
     },
@@ -126,6 +236,101 @@
                 "title" : "What is the biggest animal in the world ?",
                 "correct-answer" : "Blue Whale",
                 "other-answers" : "Elephant-Gerraf-White Whale"
+            }},
+            {"question" : {
+                "title" : "Which is the most abundant element in the universe ?",
+                "correct-answer" : "Hydrogen",
+                "other-answers" : "Oxygen-Carbon-Nitrogen"
+            }},
+            {"question" : {
+                "title" : "Optics is the study of what ?",
+                "correct-answer" : "Light",
+                "other-answers" : "Lens-Water-Air"
+            }},
+            {"question" : {
+                "title" : "What is the rarest blood type ?",
+                "correct-answer" : "AB Negative",
+                "other-answers" : "AB Positive-O Negative-B Negative"
+            }},
+            {"question" : {
+                "title" : "How many bones do sharks have in their bodies ?",
+                "correct-answer" : "0",
+                "other-answers" : "106-206-1"
+            }},
+            {"question" : {
+                "title" : "How many hearts does an octopus have ?",
+                "correct-answer" : "3",
+                "other-answers" : "4-8-5"
+            }},
+            {"question" : {
+                "title" : "Which planet spins the fastest ?",
+                "correct-answer" : "Jupiter",
+                "other-answers" : "Mars-Neptune-Pluto"
+            }},
+            {"question" : {
+                "title" : "How long does it take for the sun’s light to reach Earth ?",
+                "correct-answer" : "8 minutes",
+                "other-answers" : "10 minutes-1 hour-2 hours"
+            }},
+            {"question" : {
+                "title" : "What colour catches the eye first ?",
+                "correct-answer" : "Yellow",
+                "other-answers" : "Pink-Blue-White"
+            }},
+            {"question" : {
+                "title" : "What colour has the longest wavelength in the visible spectrum ?",
+                "correct-answer" : "Red",
+                "other-answers" : "Yellow-White-Black"
+            }},
+            {"question" : {
+                "title" : "What color is the sunset on Mars ?",
+                "correct-answer" : "Blue",
+                "other-answers" : "White-Yellow-Orange"
+            }},
+            {"question" : {
+                "title" : "What is the smallest planet in the solar system ?",
+                "correct-answer" : "Mercury",
+                "other-answers" : "Pluto-Neptune-Sun"
+            }},
+            {"question" : {
+                "title" : "What is the hottest planet in the solar system ?",
+                "correct-answer" : "Venus",
+                "other-answers" : "Sun-Mars-Jupiter"
+            }},
+            {"question" : {
+                "title" : "Which animal can change direction midair ?",
+                "correct-answer" : "Cheetah",
+                "other-answers" : "Lion-Fox-Wolf"
+            }},
+            {"question" : {
+                "title" : "How many sets of wings do bees have ?",
+                "correct-answer" : "2",
+                "other-answers" : "6-8-4"
+            }},
+            {"question" : {
+                "title" : "How many states of matter are there ?",
+                "correct-answer" : "4",
+                "other-answers" : "5-3-6"
+            }},
+            {"question" : {
+                "title" : "What metal is found at the center of the Earth ?",
+                "correct-answer" : "Iron",
+                "other-answers" : "Silver-Gold-Steel"
+            }},
+            {"question" : {
+                "title" : "How many elements are listed in the periodic table ?",
+                "correct-answer" : "118",
+                "other-answers" : "120-136-116"
+            }},
+            {"question" : {
+                "title" : "What kind of animal is Dolly, the world’s first cloned animal ?",
+                "correct-answer" : "Sheep",
+                "other-answers" : "Cow-Dog-Cat"
+            }},
+            {"question" : {
+                "title" : "A baby blue whale drinks this many liters of milk per day :",
+                "correct-answer" : "190",
+                "other-answers" : "10-500-50"
             }}
 ]}
 ]
