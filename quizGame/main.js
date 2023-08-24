@@ -35,7 +35,7 @@ request.onreadystatechange = function () {
     UserData(questions);
   }
 };
-request.open("GET", "/questions/questions.json");
+request.open("GET", "questions.json");
 request.send();
 
 // the functions
@@ -73,6 +73,7 @@ function UserData(questions) {
   let startScreen = document.querySelector(".start-screen");
 
   startButton.addEventListener("click", function (e) {
+    console.log("e");
     document.getElementById("welcome-sound").play();
 
     // user name
