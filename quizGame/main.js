@@ -32,6 +32,8 @@ request.onreadystatechange = function () {
 
     // getting user's infos
     UserData(questions);
+  } else {
+    console.log("not found");
   }
 };
 request.open("GET", "/questions/questions.json");
