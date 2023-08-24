@@ -23,6 +23,7 @@ if (!localStorage.score || !localStorage.bestScore) {
 // the main function
 let request = new XMLHttpRequest();
 request.onreadystatechange = function () {
+  console.log("e");
   if (this.readyState === 4 && this.status === 200) {
     let questions = JSON.parse(this.responseText);
     let chosenTopic;
@@ -32,8 +33,6 @@ request.onreadystatechange = function () {
 
     // getting user's infos
     UserData(questions);
-  } else {
-    console.log("not found");
   }
 };
 request.open("GET", "/questions/questions.json");
