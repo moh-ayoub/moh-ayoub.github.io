@@ -23,7 +23,6 @@ if (!localStorage.score || !localStorage.bestScore) {
 // the main function
 let request = new XMLHttpRequest();
 request.onreadystatechange = function () {
-  console.log("e");
   if (this.readyState === 4 && this.status === 200) {
     let questions = JSON.parse(this.responseText);
     let chosenTopic;
@@ -35,7 +34,7 @@ request.onreadystatechange = function () {
     UserData(questions);
   }
 };
-request.open("GET", "/questions.json");
+request.open("GET", "./questions.json");
 request.send();
 
 // the functions
@@ -73,7 +72,6 @@ function UserData(questions) {
   let startScreen = document.querySelector(".start-screen");
 
   startButton.addEventListener("click", function (e) {
-    console.log("e");
     document.getElementById("welcome-sound").play();
 
     // user name
