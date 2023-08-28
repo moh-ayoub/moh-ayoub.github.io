@@ -11,13 +11,25 @@ let time = document.querySelector(".time");
 let mainInterval;
 let timer;
 let playerScore = 0;
+let chosenTopic;
 
-let k = 0;
+let numQuestion = 12;
+
+let currentQuestion = 0;
+let clicked = false;
 
 // create the score local storage if there isn't
-if (!localStorage.score || !localStorage.bestScore) {
-  localStorage.setItem("score", "0");
-  localStorage.setItem("bestScore", "0");
+if (
+  !localStorage.sportScore ||
+  !localStorage.sportBestScore ||
+  !localStorage.scienceScore ||
+  !localStorage.scienceBestScore
+) {
+  localStorage.clear();
+  localStorage.setItem("sportScore", "0");
+  localStorage.setItem("sportBestScore", "0");
+  localStorage.setItem("scienceScore", "0");
+  localStorage.setItem("scienceBestScore", "0");
 }
 
 // the main function
@@ -25,7 +37,6 @@ let request = new XMLHttpRequest();
 request.onreadystatechange = function () {
   if (this.readyState === 4 && this.status === 200) {
     let questions = JSON.parse(this.responseText);
-    let chosenTopic;
 
     // creating the topic's list
     createTopics(questions);
@@ -88,6 +99,7 @@ function UserData(questions) {
         chosenTopic = topicsValues[i].value;
       }
     }
+
     startScreen.remove();
     mainContainer.style.display = "block";
     mainContainer.style.opacity = "1";
@@ -116,8 +128,8 @@ function UserData(questions) {
       if (time.innerHTML == 0) {
         time.style.color = "black";
         document.getElementById("wrong").play();
-        filledBullets[k - 1].style.backgroundColor = "red";
-        filledBullets[k - 1].style.border = "none";
+        filledBullets[currentQuestion - 1].style.backgroundColor = "red";
+        filledBullets[currentQuestion - 1].style.border = "none";
         time.innerHTML = 10;
       }
     }, 1000);
@@ -144,19 +156,19 @@ function setQuestions(questions, topic) {
     let randomNumber = Math.floor(Math.random() * initialQuestions.length);
     randomizedQuestions.push(initialQuestions[randomNumber]);
     initialQuestions.splice(randomNumber, 1);
-    randomizedQuestions.slice(0, 12);
+    randomizedQuestions.slice(0, numQuestion);
   }
 }
 
 // display questions
 function displayQuestions(questions) {
-  if (k == 12) {
+  if (currentQuestion == numQuestion) {
     document.getElementById("end-sound").play();
 
     // adding score to locale storage
-    localStorage.score = playerScore;
-    if (playerScore > localStorage.bestScore) {
-      localStorage.bestScore = playerScore;
+    localStorage[`${chosenTopic}Score`] = playerScore;
+    if (playerScore > localStorage[`${chosenTopic}BestScore`]) {
+      localStorage[`${chosenTopic}BestScore`] = playerScore;
     }
 
     //displaying the end screen
@@ -173,9 +185,11 @@ function displayQuestions(questions) {
     let messageContainer = document.querySelector(".message");
     let restartButton = document.querySelector(".restart");
 
-    scoreContainer.innerHTML = `You Got : ${playerScore}/12`;
-    bestScoreContainer.innerHTML = `Best Score : ${localStorage.bestScore}/12`;
-    if (playerScore == localStorage.bestScore) {
+    scoreContainer.innerHTML = `You Got : ${playerScore}/${numQuestion}`;
+    bestScoreContainer.innerHTML = `Best Score : ${
+      localStorage[`${chosenTopic}BestScore`]
+    }/${numQuestion}`;
+    if (playerScore == localStorage[`${chosenTopic}BestScore`]) {
       messageContainer.innerHTML = "You Got The Best Score !";
     } else {
       messageContainer.innerHTML = "You Can Do Better .";
@@ -192,11 +206,15 @@ function displayQuestions(questions) {
 
   answerContainer.innerHTML = "";
 
-  questionContainer.innerHTML = questions[k].question.title;
+  questionContainer.innerHTML = questions[currentQuestion].question.title;
+
+  let correctAnswer = questions[currentQuestion].question["correct-answer"];
 
   //randomize answers
-  initialAnswers.push(questions[k].question["correct-answer"]);
-  initialAnswers.push(...questions[k].question["other-answers"].split("-"));
+  initialAnswers.push(questions[currentQuestion].question["correct-answer"]);
+  initialAnswers.push(
+    ...questions[currentQuestion].question["other-answers"].split("-")
+  );
   while (initialAnswers.length > 0) {
     let randomNumber = Math.floor(Math.random() * initialAnswers.length);
     randomizedAnswers.push(initialAnswers[randomNumber]);
@@ -208,6 +226,9 @@ function displayQuestions(questions) {
     let answerDiv = document.createElement("div");
     answerDiv.classList.add("answer");
     answerDiv.innerHTML = answer;
+    if (answer == correctAnswer) {
+      answerDiv.classList.add("correct-answer");
+    }
     answerContainer.append(answerDiv);
   });
 
@@ -216,56 +237,73 @@ function displayQuestions(questions) {
 
   displayedAnswers.forEach((answer) => {
     answer.addEventListener("click", function (e) {
+      clearInterval(timer);
+      clearInterval(mainInterval);
+      clicked = true;
+      if (clicked == true) {
+        displayedAnswers.forEach(
+          (answer) => (answer.style.pointerEvents = "none")
+        );
+      }
       time.style.color = "black";
       document.getElementById("ticking-sound").pause();
       document.getElementById("ticking-sound").currentTime = 0;
       if (
-        e.currentTarget.innerHTML == questions[k - 1].question["correct-answer"]
+        e.currentTarget.innerHTML ==
+        questions[currentQuestion - 1].question["correct-answer"]
       ) {
+        e.currentTarget.style.backgroundColor = "green";
+        e.currentTarget.style.color = "white";
         document.getElementById("correct").play();
-        filledBullets[k - 1].style.backgroundColor = "green";
-        filledBullets[k - 1].style.border = "none";
+        filledBullets[currentQuestion - 1].style.backgroundColor = "green";
+        filledBullets[currentQuestion - 1].style.border = "none";
         playerScore += 1;
       } else {
+        e.currentTarget.style.backgroundColor = "red";
+        e.currentTarget.style.color = "white";
+        document.getElementsByClassName(
+          "correct-answer"
+        )[0].style.backgroundColor = "green";
+        document.getElementsByClassName("correct-answer")[0].style.color =
+          "white";
         document.getElementById("wrong").play();
-        filledBullets[k - 1].style.backgroundColor = "red";
-        filledBullets[k - 1].style.border = "none";
+        filledBullets[currentQuestion - 1].style.backgroundColor = "red";
+        filledBullets[currentQuestion - 1].style.border = "none";
       }
-
-      // restart the timer
-      clearInterval(timer);
-      time.innerHTML = "10";
-      timer = setInterval(() => {
-        let started = true;
-        if (time.innerHTML < 5) {
-          time.style.color = "red";
-          do {
-            document.getElementById("ticking-sound").play();
-          } while (started == false);
-        } else {
-          time.style.color = "black";
-        }
-        time.innerHTML -= 1;
-        if (time.innerHTML == 0) {
-          time.style.color = "black";
-          document.getElementById("wrong").play();
-          filledBullets[k - 1].style.backgroundColor = "red";
-          filledBullets[k - 1].style.border = "none";
-          time.innerHTML = 10;
-        }
+      setTimeout(() => {
+        // restart the timer
+        time.innerHTML = "10";
+        timer = setInterval(() => {
+          let started = true;
+          if (time.innerHTML < 5) {
+            time.style.color = "red";
+            do {
+              document.getElementById("ticking-sound").play();
+            } while (started == false);
+          } else {
+            time.style.color = "black";
+          }
+          time.innerHTML -= 1;
+          if (time.innerHTML == 0) {
+            time.innerHTML = 10;
+            time.style.color = "black";
+            document.getElementById("wrong").play();
+            filledBullets[currentQuestion - 1].style.backgroundColor = "red";
+            filledBullets[currentQuestion - 1].style.border = "none";
+          }
+        }, 1000);
+        //restart the main interval
+        questionContainer.innerHTML = "";
+        answerContainer.innerHTML = "";
+        displayQuestions(randomizedQuestions);
+        mainInterval = setInterval(() => {
+          displayQuestions(randomizedQuestions);
+        }, 10000);
       }, 1000);
 
-      //restart the main interval
-      questionContainer.innerHTML = "";
-      answerContainer.innerHTML = "";
-      clearInterval(mainInterval);
-      displayQuestions(randomizedQuestions);
-      mainInterval = setInterval(() => {
-        displayQuestions(randomizedQuestions);
-      }, 10000);
+      clicked = false;
     });
-    // displaying the restart screen
   });
   randomizedAnswers = [];
-  k++;
+  currentQuestion++;
 }
