@@ -15,7 +15,7 @@ html {
 body {
     font-family: "Ubuntu", sans-serif;
     overflow: hidden;
-    background-image: url(/images/abstraite-lourde-brume-orange-dans-obscurite.jpg);
+    background-image: url(./images/abstraite-lourde-brume-orange-dans-obscurite.jpg);
     background-size: 5000px 5000px;
     background-position: right;
     background-repeat: no-repeat;
