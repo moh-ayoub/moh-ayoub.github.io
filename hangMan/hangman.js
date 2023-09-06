@@ -135,8 +135,6 @@ function timer() {
 
 // show the game over screen
 function gameOver() {
-  document.getElementById("over").play();
-
   // set the score
   score = document.querySelector(".container .score").innerHTML;
   if (localStorage.bestScore < score) {
@@ -213,7 +211,10 @@ function mainLogic(topic) {
 
         // end the game if there is no more words
         if (number == gameLength) {
-          gameOver();
+          document.getElementById("over").play();
+          setTimeout(() => {
+            gameOver();
+          }, 1000);
         }
 
         wordLettersList = Array.from(topic[number].split(""));
@@ -223,7 +224,10 @@ function mainLogic(topic) {
 
       // end the game if the hanged man is fully drawn
       if (document.querySelectorAll(".hanged").length == 0) {
-        gameOver();
+        document.getElementById("over").play();
+        setTimeout(() => {
+          gameOver();
+        }, 1000);
       }
     });
   });
