@@ -1,0 +1,473 @@
+:root {
+  --red-color : #ffa600;
+  --blue-color : #abd1ff;
+}
+html {
+    scroll-behavior: smooth;
+}
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Ubuntu", sans-serif;
+    overflow: hidden;
+    background-image: url(/images/abstraite-lourde-brume-orange-dans-obscurite.jpg);
+    background-size: 5000px 5000px;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+
+/* the start screen */
+.start-screen {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+fieldset {
+	margin: 50px;
+	padding: 20px;
+	border-radius: 20px;
+	background-color: var(--blue-color);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+	display: inline-block;
+	border: none;
+    position: relative;
+    top: -180px;
+}
+
+legend {
+	font-size: 28px;
+	font-weight: bold;
+	background: var(--blue-color);
+	backdrop-filter: blur(2px);
+	border-radius: 20px;
+	padding: 10px 20px;
+	color: #263238;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.start-screen input[type="radio"] {
+	appearance: none;
+	-webkit-appearance: none;
+	width: 20px;
+	height: 20px;
+	border: 1px solid #48340d;
+	border-radius: 50%;
+	margin-right: 10px;
+	background-color: var(--blue-color);
+	position: relative;
+    cursor: pointer;
+}
+
+.start-screen [type="radio"]:checked::before {
+	content: "";
+	display: block;
+	width: 21px;
+	height: 21px;
+	background-color: var(--red-color);
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	animation: appear 0.8s;
+}
+
+.start-screen label {
+	font-size: 24px;
+	font-weight: bold;
+	color: #263238;
+    cursor:pointer;
+}
+
+.start-screen div {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+@keyframes appear {
+	0% {
+		transform: translate(-50%, -50%) scale(0);
+		background-color: #fff;
+	}
+	45% {
+		transform: translate(-50%, -50%) scale(1.6);
+		background-color: #64aedf;
+	}
+	50% {
+		transform: translate(-50%, -50%) scale(1.7);
+		background-color: #dec18a;
+	}
+	55% {
+		transform: translate(-50%, -50%) scale(1.6);
+	}
+	100% {
+		transform: translate(-50%, -50%) scale(1);
+		background-color: var(--red-color);
+	}
+}
+.user-name {
+    border-radius: 10px;
+    background-color: var(--blue-color);
+    color: #263238;
+    padding: 15px 15px 10px 15px;
+    font-size: 18px;
+    border-bottom: 3px solid white;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    font-weight: bold;
+}
+.user-name:focus {
+    outline: 0;
+}
+.user-name:focus::placeholder {
+    opacity: 0;
+}
+.user-name::placeholder {
+    color: #263238;
+    transition: 0.3s;
+}
+button.start {
+    background-color: var(--blue-color);
+    border: none;
+    border-radius: 20px;
+    color: #263238;
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    padding: 10px 80px;
+    cursor: pointer;
+    box-shadow: 1px 1px 8px #00000038;
+    transition: 0.3s;
+}
+button.start:hover {
+    background-color: var(--red-color);
+    color: white
+}
+.container {
+    background-color: var(--blue-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 80%;
+    height: 80vh;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    opacity: 0;
+    transition: 0.3s;
+}
+.stats {
+    background-color: var(--red-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 6px;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+.stats .topic {
+    
+}
+.stats .counter {
+
+}
+.material {
+    display: flex;
+    flex-grow: 1;
+    gap: 20px;
+}
+.typing-box {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.typing-box .word {
+    background-color: var(--red-color);
+    border-radius: 6px;
+    padding: 10px;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+}
+.typing-box .word span.hidden::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--blue-color);
+    position: absolute;
+    border-radius: 6px;
+}
+.typing-box .word span,
+.typing-box .letters span {
+    background-color: #eee;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    text-transform: capitalize;
+    font-weight: 900;
+    cursor: pointer;
+    position: relative;
+}
+.typing-box .letters span.clicked {
+    pointer-events: none;
+    background-color: #a5a5a591;
+}
+.typing-box .letters {
+    background-color: var(--red-color);
+    border-radius: 6px;
+    padding: 10px;
+    height: auto;
+    flex-grow: 1;
+    display: flex;
+    gap: 6px;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.hangman-box {
+    background-color: var(--red-color);
+    width: 50%;
+    border-radius: 6px;
+    padding: 10px;
+    position: relative;
+}
+/* drawing the hangman */
+.hangman-box .hanged {
+    opacity: 0;
+}
+.hangman-box > span:first-of-type {
+    position: relative;
+    top: 10px;
+}
+.hangman-box > span:first-of-type > span:first-of-type {
+    background-color: var(--blue-color);
+    height: 90%;
+    width: 6%;
+    display: block;
+    position: relative;
+    left: 20px;
+}
+.hangman-box > span:first-of-type > span:last-of-type {
+    background-color: var(--blue-color);
+    height: 6%;
+    width: 100%;
+    display: block;
+}
+.hangman-box > span:nth-of-type(2) {
+    background-color: var(--blue-color);
+    display: block;
+    width: 80%;
+    position: absolute;
+    left: 30px;
+    top: 35px;
+    height: 6%;
+}
+.hangman-box > span:nth-of-type(3) {
+    background-color: transparent;
+    display: block;
+    height: 12%;
+    width: 12%;
+    border-radius: 50%;
+    border: 4px solid var(--blue-color);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -72%;
+}
+.hangman-box > span:nth-of-type(3) > span:first-of-type {
+    background-color: var(--blue-color);
+    display: block;
+    height: 140%;
+    width: 10%;
+    position: relative;
+    left: 50%;
+    top: -145%;
+    transform: translateX(-50%);
+}
+.hangman-box > span:nth-of-type(3) > span:nth-of-type(2) {
+    display: block;
+    height: 275%;
+    width: 15%;
+    background-color: var(--blue-color);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.hangman-box > span:nth-of-type(3) > span:nth-of-type(3) {
+    display: block;
+    background-color: var(--blue-color);
+    width: 15%;
+    height: 150%;
+    position: absolute;
+    transform: rotate(45deg);
+    left: -13%;
+    top: 170%;
+}
+.hangman-box > span:nth-of-type(3) > span:nth-of-type(4) {
+    display: block;
+    background-color: var(--blue-color);
+    width: 15%;
+    height: 150%;
+    position: absolute;
+    transform: rotate(-45deg);
+    right: -13%;
+    top: 170%;
+}
+.hangman-box > span:nth-of-type(3) > span:nth-of-type(5) {
+    display: block;
+    background-color: var(--blue-color);
+    width: 15%;
+    height: 150%;
+    position: absolute;
+    transform: rotate(45deg);
+    left: -13%;
+    top: 350%;
+}
+.hangman-box > span:nth-of-type(3) > span:last-of-type {
+    display: block;
+    background-color: var(--blue-color);
+    width: 15%;
+    height: 150%;
+    position: absolute;
+    transform: rotate(-45deg);
+    right: -13%;
+    top: 350%;
+}
+@media (max-width : 1023px) {
+    .hangman-box > span:nth-of-type(3) > span:nth-of-type(3) {
+        left: -22%;
+    }
+    .hangman-box > span:nth-of-type(3) > span:nth-of-type(4) {
+        right: -22%;
+    }
+    .hangman-box > span:nth-of-type(3) > span:nth-of-type(5) {
+        left: -22%;
+    }
+    .hangman-box > span:nth-of-type(3) > span:last-of-type {
+        right: -22%;
+    }
+}
+@media (max-width : 900px) {
+    .hangman-box > span:nth-of-type(3) > span:nth-of-type(3) {
+        left: -35%;
+    }
+    .hangman-box > span:nth-of-type(3) > span:nth-of-type(4) {
+        right: -35%;
+    }
+    .hangman-box > span:nth-of-type(3) > span:nth-of-type(5) {
+        left: -35%;
+    }
+    .hangman-box > span:nth-of-type(3) > span:last-of-type {
+        right: -35%;
+    }
+}
+@media (max-width : 768px) {
+    .container {
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+        padding: 5px;
+        gap: 5px;
+    }
+    .stats {
+        padding: 10px;
+        font-size: 16px;
+    }
+}
+
+/* the end screen */
+.end-screen {
+    opacity: 0;
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    background-color: var(--blue-color);
+    padding: 30px 40px;
+    border-radius: 10px;
+    z-index: -1;
+    transition: 0.3s;
+}
+.end-screen .scores {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.end-screen .scores .current-score,
+.end-screen .scores .best-score {
+    background-color: var(--red-color);
+    padding: 12px 26px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.end-screen .message {
+    background-color: var(--red-color);
+    padding: 12px 36px;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 60px;
+    margin-bottom: 100px;
+    box-shadow: 0px 2px 15px 4px #7b7a7a57;
+} 
+.end-screen .restart {
+    background-color: var(--red-color);
+    padding: 10px 22px;
+    border-radius: 10px;
+    border: none;
+    font-size: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: 1px 1px 9px 0px #00000036;
+}
+.end-screen .restart:hover {
+    background-color: #263238;
+    color: white;
+    box-shadow: 1px 1px 9px 2px #00000036;
+
+}
